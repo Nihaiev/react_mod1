@@ -1,5 +1,6 @@
-import React from 'react';
+// import React from 'react'; якщо ми використовуємо JSX то імпортувати js не портібно
 import ReactDOM from 'react-dom';
+import App from './App';
 
 /**
  * створюємо елемент і передаємо пропси
@@ -8,17 +9,34 @@ import ReactDOM from 'react-dom';
  *
  *  */
 
-const elem1 = React.createElement('span', { children: 'Hello' });
-const elem2 = React.createElement('span', { children: 'world' });
-const element = React.createElement('div', {
-  a: 5,
-  b: 10,
-  children: [elem1, ' ', elem2], // children це властивість нашого елементу в якому можуть бути інші елементи
-});
-console.log(element);
+//React.createElement('span', { children: 'Hello' });
+// const elem1 = <span>Hello</span>;
+//React.createElement('span', { children: 'world' });
+// const elem2 = <span>world</span>;
+// const element = React.createElement('div', {
+//   a: 5,
+//   b: 10,
+//   children: [elem1, ' ', elem2], // children це властивість нашого елементу в якому можуть бути інші елементи
+// });
+// console.log(element);
+
+/**Писати React.createElement руками спер не зручно (представили 50 елементів) тому придумали JSX - це xml подібний синтаксис
+ * ми його пишемо прямо в js файлі
+ *
+ *
+ */
+// const jsxElement = (
+//   <div>
+//     {elem1}
+//     {elem2}
+//   </div>
+// );
+// console.log(jsxElement);
 
 //рендеримо елементи, за це відповідає ReactDOM -рендерить наші React елементи у справжнє DOM дерево
-ReactDOM.render(element, document.querySelector('#root'));
+// ReactDOM.render(element, document.querySelector('#root'));
+
+ReactDOM.render(<App />, document.querySelector('#root'));
 
 //===================================================================
 // import React from 'react';
