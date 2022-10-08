@@ -22,8 +22,13 @@ const Painting = ({
   );
 };
 
+// propTypes повинні прописанні для кожного пропа
 Painting.propTypes = {
   imageUrl: PropTypes.string,
+  title: PropTypes.string,
+  profileUrl: PropTypes.string,
+  autho: PropTypes.string,
+  price: PropTypes.number,
 };
 
 export default Painting;
