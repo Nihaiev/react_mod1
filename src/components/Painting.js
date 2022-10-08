@@ -32,3 +32,5 @@ Painting.propTypes = {
 };
 
 export default Painting;
+
+//1:26
