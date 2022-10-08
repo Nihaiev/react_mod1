@@ -7,6 +7,7 @@ const Painting = ({
   profileUrl,
   author = 'не відомо',
   price,
+  quantity,
 }) => {
   return (
     <div>
@@ -16,21 +17,25 @@ const Painting = ({
         Автор <a href={profileUrl}>{author}</a>
       </p>
       <p> Ціна:{price} кредитів </p>
-      <p> Доступність</p>
+      <p> Доступність: {quantity < 10 ? 'закінчується' : 'є в наявності'}</p>
       <button type="button">Добавити в корзину</button>
     </div>
   );
 };
 
-// propTypes повинні прописанні для кожного пропа
+/**
+ * propTypes повинні прописанні для кожного пропа, якщо у нас є prop то на нього має бути прописаний propTypes
+ * - пропси бувають обовязкові і не обовязкові, більшість пропсів обовязкові (наврядчи наша карточка омже існувати без якогось пропса)
+ * тому по замовчуванню після того як прописали проптайпи вказуємо isRequired
+ *  ми кажемо PropTypes.string.isRequired і вони всі будуть обовязкові
+ */
 Painting.propTypes = {
-  imageUrl: PropTypes.string,
-  title: PropTypes.string,
-  profileUrl: PropTypes.string,
-  autho: PropTypes.string,
-  price: PropTypes.number,
+  imageUrl: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  profileUrl: PropTypes.string.isRequired,
+  autho: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
 
 export default Painting;
-
-//1:26
